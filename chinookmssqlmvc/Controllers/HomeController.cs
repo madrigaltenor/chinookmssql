@@ -25,7 +25,7 @@ public class HomeController : Controller
     public async Task<IActionResult> Chinook(HttpClient client) {
         var data = new List<Artist>();
 
-        var response = await client.GetAsync("http://localhost:5106/Artists");
+        var response = await client.GetAsync(Environment.GetEnvironmentVariable("CHINOOKAPIRUL"));
 
         if (response.IsSuccessStatusCode) {
             data = await response.Content.ReadFromJsonAsync<List<Artist>>();
