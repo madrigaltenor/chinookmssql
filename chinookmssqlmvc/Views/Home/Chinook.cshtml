@@ -1,0 +1,12 @@
+@model List<chinookmssqlmvc.Models.Artist>
+
+@{
+    ViewData["Title"] = "Artists";
+}
+
+<h3>Artists</h3>
+<ul>
+@foreach(var artist in @Model) {
+    <li>@artist.Name</li>
+}
+</ul>
